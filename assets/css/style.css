@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&family=Press+Start+2P&display=swap');
+
+:root {
+  --overlay-color-start: #40c8f4;
+  --overlay-color-end: #2179b5;
+  --label-color: #999999;
+  /* input variables */
+  --input-focus-color: #555555;
+  --input-unfocus-color: #efeeed;
+  --input-border-color: #dbdbdb;
+  /* button variables */
+  --button-focus-color: #ffffff;
+  --button-bg-color: #40c8f4;
+  --button-opacity: 70%;
+  --button-unfocus-color: #dddcdc;
+  --button-bg-unfocus-color: #f6f6f6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--label-color);
+}
+
+main {
+  width: 70vw;
+  background-image: url('../img/bg.jpg');
+  background-size: cover;
+}
+
+aside {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  background: var(--button-bg-unfocus-color);
+}
+
+aside form {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  justify-content: space-evenly;
+}
+
+aside h1 {
+  font-weight: 400;
+  color: var(--input-focus-color);
+  font-size: 30px;
+}
+
+.form-group:focus-within {
+  color: var(--input-focus-color);
+}
+
+.form-group input {
+  height: 36px;
+  border: none;
+  width: 100%;
+  outline: none;
+  border-bottom: 3px solid var(--input-border-color);
+  background: none;
+}
+
+.form-group input:focus {
+  border-bottom: 3px solid var(--input-focus-color);
+}
+
+
+
+.overlay {
+  height: 100%;
+  background: var(--overlay-color-start);
+  background: linear-gradient(342deg, var(--overlay-color-start) 0%, var(--overlay-color-end) 100%);
+  opacity: .8;
+}
+
+.button {
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 10px;
+  color: var(--button-focus-color);
+  background: var(--button-bg-color);
+  width: 100%;
+}
+
+.button:hover {
+  opacity: var(--button-opacity);
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.disabled {
+  background: var(--button-bg-unfocus-color);
+  color: var(--input-focus-color);
+}
